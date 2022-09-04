@@ -8,12 +8,16 @@ window.addEventListener("load", function () {
   var end = document.getElementById("end");
   var boundaries = document.getElementsByClassName("boundary");
   var displayScore = document.querySelector(".example");
+  var greet=this.document.getElementById("greeting");
 
   //defined some variables I'm Gonna be using
   var result = "";
   var score = 0;
   var trials=0;
 
+  //ask for user name
+  var name =this.window.prompt("Enter your name: ");
+  greet.innerText="Greetings" +name;
   //defind the events I'm gonna be using
   start.addEventListener("mouseover", startGame);
   end.addEventListener("mouseover", endGame);
