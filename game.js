@@ -20,9 +20,9 @@ window.addEventListener("load", function () {
   start.addEventListener("click", resetGame);
 
   //for loop to loop over the array of boundary objects
-  for (var i = 0; i < boundaries.length; i++) {
+  /*for (var i = 0; i < boundaries.length; i++) {
     boundaries[i].addEventListener("mouseover", touchBoundaries);
-  }
+  }*/
 
   //Functions section down here
   function touchBoundaries() {
@@ -34,7 +34,11 @@ window.addEventListener("load", function () {
     displayScore.innerText ="YOU LOST";
     console.log("TEST");
   }
-  function startGame() {}
+  function startGame() {
+    for (var i = 0; i < boundaries.length; i++) {
+      boundaries[i].addEventListener("mouseover", touchBoundaries);
+    }
+  }
 
   function resetGame() {
     
