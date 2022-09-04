@@ -110,7 +110,8 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
 	height: 150px;
 	width: 98px;
 }
-button{
+.button{
+	
 	margin-left: 28%;
 	
 }

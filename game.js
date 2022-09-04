@@ -8,7 +8,9 @@ window.addEventListener("load", function () {
   var end = document.getElementById("end");
   var boundaries = document.getElementsByClassName("boundary");
   var displayScore = document.querySelector(".example");
-  var greet=this.document.getElementById("greeting");
+  var greet=document.getElementById("greeting");
+  var button=document.getElementById("button");
+  var buttonRes=document.getElementById("buttonRes");
 
   //defined some variables I'm Gonna be using
   var result = "";
@@ -17,11 +19,12 @@ window.addEventListener("load", function () {
 
   //ask for user name
   var name =this.window.prompt("Enter your name: ");
-  greet.innerText="Greetings" +name;
+  greet.innerText="Greetings " +name;
   //defind the events I'm gonna be using
   start.addEventListener("mouseover", startGame);
   end.addEventListener("mouseover", endGame);
   start.addEventListener("click", resetGame);
+  button.addEventListener("click",saveScore);
 
   //for loop to loop over the array of boundary objects
   /*for (var i = 0; i < boundaries.length; i++) {
@@ -60,5 +63,9 @@ window.addEventListener("load", function () {
     result = "YOU WON";
     console.log("Your acore is: " + score);
     displayScore.innerText = result;
+  }
+  function saveScore(){
+    window.localStorage.setItem("score",score);
+    buttonRes.innerText="Score Saved!"
   }
 });
