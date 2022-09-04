@@ -61,7 +61,7 @@ window.addEventListener("load", function () {
   function endGame() {
     score = score + 5;
     result = "YOU WON";
-    console.log("Your acore is: " + score);
+    
     displayScore.innerText = result;
   }
   function saveScore(){
