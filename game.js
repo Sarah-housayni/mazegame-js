@@ -11,6 +11,7 @@ window.addEventListener("load", function () {
   var greet=document.getElementById("greeting");
   var button=document.getElementById("button");
   var buttonRes=document.getElementById("buttonRes");
+  var status=document.getElementById("status");
 
   //defined some variables I'm Gonna be using
   var result = "";
@@ -18,7 +19,7 @@ window.addEventListener("load", function () {
   var trials=0;
 
   //ask for user name
-  var name =this.window.prompt("Enter your name: ");
+  var name =window.prompt("Enter your name: ");
   greet.innerText="Greetings " +name;
   //defind the events I'm gonna be using
   start.addEventListener("mouseover", startGame);
@@ -30,6 +31,7 @@ window.addEventListener("load", function () {
   /*for (var i = 0; i < boundaries.length; i++) {
     boundaries[i].addEventListener("mouseover", touchBoundaries);
   }*/
+  status.innerHTML="Begin by moving your mouse over the S.";
 
   //Functions section down here
   function touchBoundaries() {
@@ -42,6 +44,7 @@ window.addEventListener("load", function () {
     console.log("TEST");
   }
   function startGame() {
+    status.innerHTML="You are in the game";
     for (var i = 0; i < boundaries.length; i++) {
       boundaries[i].addEventListener("mouseover", touchBoundaries);
     }
@@ -59,9 +62,13 @@ window.addEventListener("load", function () {
     displayScore.innerText = result;
   }
   function endGame() {
+    status.innerHTML="You finished the game.";
     score = score + 5;
     result = "YOU WON";
-    
+    // for (var i = 0; i < boundaries.length; i++) {
+    //   boundaries[i].removeEventListener("mouseover", touchBoundaries);
+    // }
+    // removeEventListener("mouseover",touchBoundaries);
     displayScore.innerText = result;
   }
   function saveScore(){
