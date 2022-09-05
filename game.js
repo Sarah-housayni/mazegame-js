@@ -65,10 +65,10 @@ window.addEventListener("load", function () {
     status.innerHTML="You finished the game.";
     score = score + 5;
     result = "YOU WON";
-    // for (var i = 0; i < boundaries.length; i++) {
-    //   boundaries[i].removeEventListener("mouseover", touchBoundaries);
-    // }
-    // removeEventListener("mouseover",touchBoundaries);
+    for (var i = 0; i < boundaries.length; i++) {
+      boundaries[i].removeEventListener("mouseover", touchBoundaries);
+    }
+   
     displayScore.innerText = result;
   }
   function saveScore(){
